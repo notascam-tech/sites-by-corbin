@@ -1,0 +1,576 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Chase &amp; Sons Plumbing — Family Plumbing Since Day One</title>
+  <meta name="description" content="Chase &amp; Sons Plumbing — trusted family-owned plumbing in Fresno, CA. 4.7-star rated with 101+ reviews. Drain cleaning, water heaters, leak repair, repiping. Call (559) 220-8200." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #1b4f72;
+      --primary-dark: #0e2a3f;
+      --accent: #e8c87a;
+      --bg: #fafaf7;
+      --surface: #fff;
+      --text: #1a1a1a;
+      --muted: #5c5c5c;
+      --border: #d4d0c8;
+      --radius: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--primary-dark);
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .nav-phone:hover { color: var(--primary); }
+
+    .phone-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.85rem;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--primary-dark);
+      color: white;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--accent);
+      color: var(--primary-dark);
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: #f2d788;
+      transform: translateY(-1px);
+    }
+
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: 3rem 0; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ── Services ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: all 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── About ── */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .about { grid-template-columns: 1fr; }
+    }
+
+    .about-text h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .about-image {
+      background: var(--primary);
+      border-radius: var(--radius);
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 3rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Reviews ── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .review-stars {
+      color: #f5a623;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .review-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    /* ── Contact ── */
+    .contact {
+      background: var(--primary-dark);
+      color: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact p {
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-phone {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .contact-phone:hover { text-decoration: underline; }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      opacity: 0.85;
+      flex-wrap: wrap;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--text);
+      color: #aaa;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .service-area {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .service-area h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .area-tag {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <a href="#" class="logo">
+        <div class="logo-icon">CS</div>
+        Chase &amp; Sons Plumbing
+      </a>
+      <a href="tel:5592208200" class="nav-phone">
+        <span class="phone-icon">📞</span>
+        (559) 220-8200
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Chase &amp; Sons Plumbing — Family-Owned. Honest. Done Right.</h1>
+      <p>Three generations of plumbing experience in Fresno. Drain cleaning, water heaters, leak repair, full repipes. 4.7 stars across 101+ reviews.</p>
+      <a href="tel:5592208200" class="hero-cta">
+        📞 Call (559) 220-8200
+      </a>
+      <div class="hero-trust">
+        <span class="hero-trust-item">⭐ 4.7/5 rating</span>
+        <span class="hero-trust-item">📋 101+ reviews</span>
+        <span class="hero-trust-item">👨‍👩‍👧‍👦 Family-owned</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Services -->
+    <section id="services">
+      <div class="section-header">
+        <h2>Plumbing Services</h2>
+        <p>From a dripping faucet to a full house repipe — we handle it all</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚿</div>
+          <h3>Drain Cleaning &amp; Snaking</h3>
+          <p>Clogged drain? We clear it fast without damaging your pipes. Hydro-jetting available for tough blockages.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔥</div>
+          <h3>Water Heater Install &amp; Repair</h3>
+          <p>Tank and tankless water heaters. We'll tell you whether repair or replacement makes more sense.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚰</div>
+          <h3>Leak Detection &amp; Repair</h3>
+          <p>Find the leak before it causes damage. We use professional detection tools to pinpoint the problem.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Pipe Repair &amp; Repiping</h3>
+          <p>Damaged pipes, old galvanized lines, low water pressure. Repiping with copper or PEX done right.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚽</div>
+          <h3>Sewer Line Services</h3>
+          <p>Sewer inspections, repairs, and replacements. Camera inspections to see exactly what's going on.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Fixture Installation</h3>
+          <p>Faucets, toilets, sinks, garbage disposals. Install new fixtures or repair the ones you have.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="about">
+        <div class="about-text">
+          <h2>A Family Business Built on Trust</h2>
+          <p>Chase &amp; Sons Plumbing has been serving Fresno and the surrounding area for years. We're a family-owned operation — not a franchise, not a call center. When you call, you get real people who actually show up.</p>
+          <p>We believe in straightforward pricing, clean work, and fixing the problem for good. No surprise charges, no upselling. If something doesn't need to be done, we'll tell you.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-value">101+</div>
+              <div class="stat-label">Reviews</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">4.7</div>
+              <div class="stat-label">Star Rating</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">👨‍👩‍👧</div>
+              <div class="stat-label">Family-Owned</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          🏠
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+      <div class="section-header">
+        <h2>Customer Reviews</h2>
+        <p>4.7 out of 5 stars — 101+ reviews on Google</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Honest, reliable, and they actually answer the phone. Fixed a major leak in our kitchen and didn't charge us for anything we didn't need. These guys are the real deal."</p>
+          <div class="review-author">— Verified Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Called Chase &amp; Sons for a water heater that kept shutting off. They came out the same day, diagnosed the issue, and replaced it for a fair price. No fluff, just good work."</p>
+          <div class="review-author">— Verified Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Have used them multiple times over the years. Always professional, always on time, and they remember what they've done for our house. Hard to find plumbing companies like this."</p>
+          <div class="review-author">— Verified Google Review</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area -->
+    <section id="service-area">
+      <div class="section-header">
+        <h2>Service Area</h2>
+        <p>Serving Fresno and surrounding communities</p>
+      </div>
+      <div class="service-area">
+        <h3>Cities We Serve</h3>
+        <div class="area-tags">
+          <span class="area-tag">Fresno</span>
+          <span class="area-tag">Clovis</span>
+          <span class="area-tag">Fresno County</span>
+          <span class="area-tag">Central Valley</span>
+          <span class="area-tag">and surrounding areas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="contact">
+        <h2>Need a Plumber? Call Today.</h2>
+        <p>Reach out for a free estimate or to schedule service. We answer the phone.</p>
+        <a href="tel:5592208200" class="contact-phone">📞 (559) 220-8200</a>
+        <div class="contact-details">
+          <span>📞 Phone: (559) 220-8200</span>
+          <span>📍 Fresno, CA</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Chase &amp; Sons Plumbing. All rights reserved. &nbsp;|&nbsp; <a href="tel:5592208200">(559) 220-8200</a></p>
+    <p style="margin-top:0.3rem;opacity:0.6;">Family-owned plumbing services in Fresno and Central Valley, CA.</p>
+  </footer>
+
+</body>
+</html>

@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Big Joe's Plumbing — Fresno Plumbing You Can Trust</title>
+  <meta name="description" content="Big Joe's Plumbing — trusted plumbing in Fresno, CA. 4.7-star rated with 65+ reviews. Drain cleaning, water heaters, leak repair, sewer service. Call (559) 264-7089." />
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔧</text></svg>" />
+  <style>
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --primary: #b5651d;  /* warm brown/rust */
+      --primary-dark: #7a3b0e;
+      --accent: #f5e6c8;
+      --bg: #faf8f3;
+      --surface: #fff;
+      --text: #1a1a1a;
+      --muted: #5c5c5c;
+      --border: #d4d0c8;
+      --radius: 6px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Header ── */
+    header {
+      background: var(--surface);
+      border-bottom: 1px solid var(--border);
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+
+    .nav {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0.75rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      font-weight: 800;
+      font-size: 1.1rem;
+      text-decoration: none;
+      color: var(--primary-dark);
+    }
+
+    .logo-icon {
+      width: 36px;
+      height: 36px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-weight: 900;
+      font-size: 0.95rem;
+    }
+
+    .nav-phone {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      color: var(--text);
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .nav-phone:hover { color: var(--primary); }
+
+    .phone-icon {
+      width: 32px;
+      height: 32px;
+      background: var(--primary);
+      border-radius: 4px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 0.85rem;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: var(--primary-dark);
+      color: white;
+      padding: 3.5rem 1.5rem;
+      text-align: center;
+    }
+
+    .hero-inner {
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    .hero h1 {
+      font-size: clamp(1.75rem, 4vw, 2.5rem);
+      font-weight: 800;
+      margin-bottom: 0.75rem;
+      line-height: 1.2;
+    }
+
+    .hero p {
+      font-size: 1.1rem;
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+      max-width: 500px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .hero-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      background: var(--accent);
+      color: var(--primary-dark);
+      padding: 0.85rem 1.75rem;
+      border-radius: var(--radius);
+      font-weight: 700;
+      font-size: 1.1rem;
+      text-decoration: none;
+      transition: all 0.2s;
+    }
+
+    .hero-cta:hover {
+      background: #f0dcc0;
+      transform: translateY(-1px);
+    }
+
+    .hero-trust {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 2rem;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      flex-wrap: wrap;
+    }
+
+    .hero-trust-item {
+      display: flex;
+      align-items: center;
+      gap: 0.3rem;
+    }
+
+    /* ── Container ── */
+    .container {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    section { padding: 3rem 0; }
+
+    .section-header {
+      text-align: center;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-header h2 {
+      font-size: 1.5rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.4rem;
+    }
+
+    .section-header p {
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    /* ── Services ── */
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 1rem;
+    }
+
+    .service-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+      transition: all 0.2s;
+    }
+
+    .service-card:hover {
+      border-color: var(--primary);
+      box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    }
+
+    .service-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--primary);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 0.75rem;
+      font-size: 1.1rem;
+    }
+
+    .service-card h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      margin-bottom: 0.3rem;
+    }
+
+    .service-card p {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    /* ── About ── */
+    .about {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 2rem;
+      align-items: center;
+    }
+
+    @media (max-width: 768px) {
+      .about { grid-template-columns: 1fr; }
+    }
+
+    .about-text h2 {
+      font-size: 1.4rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .about-text p {
+      color: var(--muted);
+      margin-bottom: 1rem;
+      font-size: 0.95rem;
+    }
+
+    .about-image {
+      background: var(--primary);
+      border-radius: var(--radius);
+      height: 280px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--accent);
+      font-size: 3rem;
+    }
+
+    .about-stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+      margin-top: 1.5rem;
+    }
+
+    .stat {
+      text-align: center;
+      padding: 1rem;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+    }
+
+    .stat-value {
+      font-size: 1.5rem;
+      font-weight: 800;
+      color: var(--primary);
+    }
+
+    .stat-label {
+      font-size: 0.75rem;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    /* ── Reviews ── */
+    .reviews-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1rem;
+    }
+
+    .review-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.25rem;
+    }
+
+    .review-stars {
+      color: #f5a623;
+      font-size: 0.9rem;
+      margin-bottom: 0.5rem;
+      letter-spacing: 2px;
+    }
+
+    .review-text {
+      font-size: 0.9rem;
+      color: var(--text);
+      font-style: italic;
+      margin-bottom: 0.75rem;
+      line-height: 1.5;
+    }
+
+    .review-author {
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--primary-dark);
+    }
+
+    /* ── Contact ── */
+    .contact {
+      background: var(--primary-dark);
+      color: white;
+      border-radius: var(--radius);
+      padding: 2rem;
+      text-align: center;
+    }
+
+    .contact h2 {
+      font-size: 1.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .contact p {
+      opacity: 0.9;
+      margin-bottom: 1.5rem;
+    }
+
+    .contact-phone {
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--accent);
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .contact-phone:hover { text-decoration: underline; }
+
+    .contact-details {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-top: 1.5rem;
+      font-size: 0.85rem;
+      opacity: 0.85;
+      flex-wrap: wrap;
+    }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--text);
+      color: #aaa;
+      padding: 1.5rem;
+      text-align: center;
+      font-size: 0.8rem;
+    }
+
+    footer a { color: var(--accent); text-decoration: none; }
+
+    .service-area {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 1.5rem;
+      text-align: center;
+    }
+
+    .service-area h3 {
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+      margin-bottom: 0.75rem;
+    }
+
+    .area-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 0.5rem;
+    }
+
+    .area-tag {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      padding: 0.3rem 0.7rem;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav class="nav">
+      <a href="#" class="logo">
+        <div class="logo-icon">BJ</div>
+        Big Joe's Plumbing
+      </a>
+      <a href="tel:5592647089" class="nav-phone">
+        <span class="phone-icon">📞</span>
+        (559) 264-7089
+      </a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-inner">
+      <h1>Big Joe's Plumbing — Fresno's Trusted Local Plumber</h1>
+      <p>Real plumbing work, honest prices, fast response. Serving Fresno and the Central Valley for years. 4.7 stars, 65+ satisfied customers.</p>
+      <a href="tel:5592647089" class="hero-cta">
+        📞 Call (559) 264-7089
+      </a>
+      <div class="hero-trust">
+        <span class="hero-trust-item">⭐ 4.7/5 rating</span>
+        <span class="hero-trust-item">📋 65+ reviews</span>
+        <span class="hero-trust-item">✅ Licensed &amp; insured</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+
+    <!-- Services -->
+    <section id="services">
+      <div class="section-header">
+        <h2>Plumbing Services</h2>
+        <p>From quick fixes to major repairs — we handle it all</p>
+      </div>
+      <div class="services-grid">
+        <div class="service-card">
+          <div class="service-icon">🚿</div>
+          <h3>Drain Cleaning</h3>
+          <p>Sink, tub, and main line drains cleared fast. We use professional snakes and hydro-jetting for tough jobs.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔥</div>
+          <h3>Water Heaters</h3>
+          <p>Installation, repair, and maintenance for gas and electric tank units plus tankless systems.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚰</div>
+          <h3>Leak Detection</h3>
+          <p>We find hidden leaks before they cause damage. Accurate, fast, and we fix what we find.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🔧</div>
+          <h3>Pipe Repair</h3>
+          <p>Broken pipes, corroded lines, pinhole leaks — we repair and replace with quality materials.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🚽</div>
+          <h3>Sewer &amp; Drain Lines</h3>
+          <p>Sewer camera inspections, repairs, and cleaning for residential and light commercial.</p>
+        </div>
+        <div class="service-card">
+          <div class="service-icon">🏠</div>
+          <h3>Fixture Install &amp; Repair</h3>
+          <p>Toilets, faucets, sinks, disposals — install new, fix old, or replace what's worn out.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about">
+      <div class="about">
+        <div class="about-text">
+          <h2>Real Plumbing. Real Results.</h2>
+          <p>Big Joe's Plumbing is a Fresno-based plumbing company built on doing good work at fair prices. We don't send you to a call center — we show up, assess the problem, and fix it.</p>
+          <p>Every job starts with an honest assessment. If it's a $50 fix, we'll tell you. If it needs a bigger repair, we'll explain why. No surprises when the bill comes.</p>
+          <div class="about-stats">
+            <div class="stat">
+              <div class="stat-value">65+</div>
+              <div class="stat-label">Reviews</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">4.7</div>
+              <div class="stat-label">Star Rating</div>
+            </div>
+            <div class="stat">
+              <div class="stat-value">✅</div>
+              <div class="stat-label">Local &amp; Trusted</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-image">
+          🔧
+        </div>
+      </div>
+    </section>
+
+    <!-- Reviews -->
+    <section id="reviews">
+      <div class="section-header">
+        <h2>What Customers Say</h2>
+        <p>4.7 out of 5 stars — 65+ reviews on Google</p>
+      </div>
+      <div class="reviews-grid">
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Joe came out same day for a clogged drain. Diagnosed it quickly, cleared it, and didn't try to upsell me on anything. Fair price, clean job. Will call again."</p>
+          <div class="review-author">— Verified Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Had a water heater problem. Big Joe's replaced it for a reasonable price and even helped us understand what to look for next time. These guys know their stuff."</p>
+          <div class="review-author">— Verified Google Review</div>
+        </div>
+        <div class="review-card">
+          <div class="review-stars">★★★★★</div>
+          <p class="review-text">"Honest, reliable plumbing. They fixed a leak under our sink that another company missed. Good communication, on time, clean work. I recommend them."</p>
+          <div class="review-author">— Verified Google Review</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Service Area -->
+    <section id="service-area">
+      <div class="section-header">
+        <h2>Service Area</h2>
+        <p>Serving Fresno and the Central Valley</p>
+      </div>
+      <div class="service-area">
+        <h3>Cities &amp; Areas We Serve</h3>
+        <div class="area-tags">
+          <span class="area-tag">Fresno</span>
+          <span class="area-tag">Clovis</span>
+          <span class="area-tag">Fresno County</span>
+          <span class="area-tag">Central Valley</span>
+          <span class="area-tag">Visalia area</span>
+          <span class="area-tag">and surrounding areas</span>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact -->
+    <section id="contact">
+      <div class="contact">
+        <h2>Need a Plumber? Call Big Joe's.</h2>
+        <p>Reach out for a free estimate or to schedule service. We answer the phone.</p>
+        <a href="tel:5592647089" class="contact-phone">📞 (559) 264-7089</a>
+        <div class="contact-details">
+          <span>📞 Phone: (559) 264-7089</span>
+          <span>📍 Fresno, CA</span>
+        </div>
+      </div>
+    </section>
+
+  </div>
+
+  <footer>
+    <p>&copy; 2025 Big Joe's Plumbing. All rights reserved. &nbsp;|&nbsp; <a href="tel:5592647089">(559) 264-7089</a></p>
+    <p style="margin-top:0.3rem;opacity:0.6;">Local plumbing services in Fresno and the Central Valley, CA.</p>
+  </footer>
+
+</body>
+</html>
